@@ -1,6 +1,6 @@
 #ifndef GRAPHNODE_H_
 #define GRAPHNODE_H_
-
+#include <memory>
 #include <vector>
 #include <string>
 #include "chatbot.h"
@@ -46,12 +46,12 @@ public:
     // proprietary functions
     void AddToken(std::string token); // add answers to list
     void AddEdgeToParentNode(GraphEdge *edge);
-    void AddEdgeToChildNode(GraphEdge *edge);
+    void AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge);
 
     //// STUDENT CODE
     ////
 
-    void MoveChatbotHere(ChatBot *chatbot);
+    void MoveChatbotHere(ChatBot chatbot);
 
     ////
     //// EOF STUDENT CODE
