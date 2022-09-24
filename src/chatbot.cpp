@@ -7,7 +7,7 @@
 #include "graphnode.h"
 #include "graphedge.h"
 #include "chatbot.h"
-
+using namespace std;
 // constructor WITHOUT memory allocation
 ChatBot::ChatBot()
 {
@@ -44,7 +44,15 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
-
+ChatBot::ChatBot(ChatBot &src){
+    cout << "ChatBot Copy Constructor" << endl;
+    
+    _rootNode = src._rootNode;
+    _chatLogic = src._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
+    _currentNode= src._currentNode;
+    _
+}
 ////
 //// EOF STUDENT CODE
 
